@@ -1,11 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import AppLayout from '@/sections/app/app-layout';
-import acceptLanguage from 'accept-language';
 import { cookies } from 'next/headers';
+import { Inter } from 'next/font/google';
+import acceptLanguage from 'accept-language';
 import { I18NProvider } from '@/i18n/context';
+import AppLayout from '@/sections/app/app-layout';
 import { cookieI18Name, fallbackLng, languages } from '@/i18n/settings';
+import NextUIWithRouterProvider from '@/nextui/nextui-with-router-provider';
+
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +27,9 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <I18NProvider {...{ lng }}>
-          <AppLayout>{children}</AppLayout>
+          <NextUIWithRouterProvider>
+            <AppLayout>{children}</AppLayout>
+          </NextUIWithRouterProvider>
         </I18NProvider>
       </body>
     </html>

@@ -10,8 +10,10 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@nextui-org/react": "^2.3.1",
     "accept-language": "^3.0.18",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.1.1",
     "i18next": "^23.11.2",
     "i18next-browser-languagedetector": "^7.2.1",
     "i18next-resources-to-backend": "^1.2.1",
