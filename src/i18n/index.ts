@@ -4,10 +4,11 @@ import { initReactI18next } from 'react-i18next/initReactI18next';
 import { cookieI18Name, fallbackLng, getOptions, languages } from './settings';
 import { cookies } from 'next/headers';
 import acceptLanguage from 'accept-language';
+import { LanguageOptions } from './types';
 
 acceptLanguage.languages(languages);
 
-export const initI18next = async (lng: string, ns?: string) => {
+export const initI18next = async (lng: LanguageOptions, ns?: string) => {
   const i18nInstance = createInstance();
   await i18nInstance
     .use(initReactI18next)
@@ -19,7 +20,7 @@ export const initI18next = async (lng: string, ns?: string) => {
 export const getCurrentLanguage = () => {
   let language = acceptLanguage.get(cookies().get(cookieI18Name)?.value);
   if (!language) language = fallbackLng;
-  return language;
+  return language as LanguageOptions;
 };
 
 export async function useTranslationServer(ns?: string, options: { keyPrefix?: string } = {}) {

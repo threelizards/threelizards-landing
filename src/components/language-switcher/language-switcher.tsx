@@ -4,6 +4,7 @@ import React from 'react';
 import { useI18NContext } from '@/i18n/context';
 import { languageObjects } from '@/i18n/settings';
 import { Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/react';
+import { LanguageOptions } from '@/i18n/types';
 
 const LanguageSwitcher = () => {
   const { language, changeLanguage } = useI18NContext();
@@ -19,7 +20,7 @@ const LanguageSwitcher = () => {
           src={languageObjects.find(({ code }) => code === language)?.flag.src}
         />
       </DropdownTrigger>
-      <DropdownMenu aria-label='Languages' variant='flat' onAction={(key) => changeLanguage(key as string)}>
+      <DropdownMenu aria-label='Languages' variant='flat' onAction={(key) => changeLanguage(key as LanguageOptions)}>
         {languageObjects
           .filter(({ code }) => code !== language)
           .map(({ code, flag }) => (
