@@ -24,7 +24,7 @@ export default function RootLayout({
   acceptLanguage.languages(languages);
   const lng = acceptLanguage.get(cookies().get(cookieI18Name)?.value) || fallbackLng;
   return (
-    <html lang='en'>
+    <html lang={lng}>
       <body className={inter.className}>
         <I18NProvider {...{ lng }}>
           <NextUIWithRouterProvider>
