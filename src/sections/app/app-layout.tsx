@@ -1,13 +1,12 @@
-import { HEADER_HEIGHT } from '@/components/header/config';
+import React from 'react';
 import Header from '@/components/header/header';
 import { LayoutBaseProps } from '@/types/utils';
-import React from 'react';
 
 const AppLayout: React.FC<LayoutBaseProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <main style={{ marginTop: HEADER_HEIGHT }}>{children}</main>
+      <main>{children}</main>
     </>
   );
 };

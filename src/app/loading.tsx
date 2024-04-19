@@ -1,6 +1,4 @@
-'use client';
-
-import { Spinner } from '@nextui-org/react';
+import { Spinner } from '@nextui-org/spinner';
 import React from 'react';
 
 const Loading = () => {
