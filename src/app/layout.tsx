@@ -25,7 +25,7 @@ export default function RootLayout({
   const lng = getCurrentLanguage();
   return (
     <html lang={lng}>
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-screen`}>
         <I18NProvider {...{ lng }}>
           <NextUIWithRouterProvider>
             <AppLayout>{children}</AppLayout>

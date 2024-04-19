@@ -4,6 +4,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/navb
 import Logo from '@/assets/logo/logo-no-bg.png';
 import { H3 } from '@/theme/typography';
 import { Image } from '@nextui-org/image';
+import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
 
 const Header = () => {
   return (
@@ -13,6 +14,9 @@ const Header = () => {
         <H3>Three Lizards</H3>
       </NavbarBrand>
       <NavbarContent justify='end'>
+        <NavbarItem>
+          <ThemeSwitcher />
+        </NavbarItem>
         <NavbarItem>
           <LanguageSwitcher />
         </NavbarItem>
