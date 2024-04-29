@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 export const H1: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
-    <h1 className={clsx(twMerge('font-semibold text-4xl', className))} {...props}>
+    <h1 className={clsx(twMerge('font-semibold text-4xl md:text-5xl lg:text-6xl', className))} {...props}>
       {children}
     </h1>
   );
@@ -35,9 +35,17 @@ export const H4: React.FC<HeadingProps> = ({ children, className, ...props }) =>
   );
 };
 
+export const Caption1: React.FC<HeadingProps> = ({ children, className, ...props }) => {
+  return (
+    <h1 className={clsx(twMerge('font-bold text-base md:text-xl lg:text-2xl', className))} {...props}>
+      {children}
+    </h1>
+  );
+};
+
 export const P: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
-    <h1 className={clsx(twMerge('font-normal text-base', className))} {...props}>
+    <h1 className={clsx(twMerge('font-normal text-base md:text-xl lg:text-2xl', className))} {...props}>
       {children}
     </h1>
   );

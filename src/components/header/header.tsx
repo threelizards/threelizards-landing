@@ -5,8 +5,11 @@ import Logo from '@/assets/logo/logo-no-bg.png';
 import { H3 } from '@/theme/typography';
 import { Image } from '@nextui-org/image';
 import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
+import { Button } from '@nextui-org/button';
+import { useTranslationServer } from '@/i18n';
 
-const Header = () => {
+const Header = async () => {
+  const { t } = await useTranslationServer('general');
   return (
     <Navbar maxWidth='full' className=''>
       <NavbarBrand className='gap-2'>
@@ -14,6 +17,11 @@ const Header = () => {
         <H3>Three Lizards</H3>
       </NavbarBrand>
       <NavbarContent justify='end'>
+        <NavbarItem>
+          <Button color='success' variant='ghost'>
+            {t('contact')}
+          </Button>
+        </NavbarItem>
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
