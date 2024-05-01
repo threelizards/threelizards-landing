@@ -1,0 +1,8 @@
+{
+  "title": "Contáctenos",
+  "form": {
+    "phone": "Teléfono",
+    "email": "Correo",
+    "description": "Descripción"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Contact us",
+  "form": {
+    "phone": "Phone",
+    "email": "Email",
+    "description": "Description"
+  }
+}
