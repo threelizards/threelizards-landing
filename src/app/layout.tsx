@@ -24,7 +24,7 @@ export default function RootLayout({
   acceptLanguage.languages(languages);
   const lng = getCurrentLanguage();
   return (
-    <html lang={lng}>
+    <html lang={lng} suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen`}>
         <I18NProvider {...{ lng }}>
           <NextUIWithRouterProvider>
