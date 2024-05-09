@@ -8,6 +8,7 @@ import NextUIWithRouterProvider from '@/nextui/nextui-with-router-provider';
 
 import './globals.css';
 import { getCurrentLanguage } from '@/i18n';
+import ToastContainer from '@/components/toast/toast-container';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen`}>
         <I18NProvider {...{ lng }}>
           <NextUIWithRouterProvider>
-            <AppLayout>{children}</AppLayout>
+            <ToastContainer>
+              <AppLayout>{children}</AppLayout>
+            </ToastContainer>
           </NextUIWithRouterProvider>
         </I18NProvider>
       </body>

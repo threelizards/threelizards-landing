@@ -11,16 +11,23 @@ import ContactUsModal from './contact-us-modal';
 import { useDisclosure } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import { routes } from '@/lib/routes';
+import { toast } from 'react-toastify';
+import { useTranslationClient } from '@/i18n/client';
 
 const ContactUsFormContainer = () => {
   const methods = useForm({ resolver: zodResolver(contactUSchema), defaultValues: contactUsDefaultValues });
   const { isOpen, onOpen } = useDisclosure();
+  const { t } = useTranslationClient('contact-us');
   const { handleSubmit } = methods;
   const router = useRouter();
 
   const onSubmit = handleSubmit(async (data) => {
-    await frontendService.clientRequest.createClientRequest(data);
-    onOpen();
+    try {
+      await frontendService.clientRequest.createClientRequest(data);
+      onOpen();
+    } catch (error) {
+      toast(t('error.unknown'), { type: 'error' });
+    }
   });
 
   const onClose = () => {

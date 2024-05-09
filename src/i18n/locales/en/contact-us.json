@@ -9,5 +9,8 @@
     "title": "Done!",
     "accept": "Accept",
     "text": "Your request is already with us! We will contact you as soon as possible."
+  },
+  "error": {
+    "unknown": "Sorry, an error occurred processing your request, please try again later."
   }
 }

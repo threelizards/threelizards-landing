@@ -9,5 +9,8 @@
     "title": "Hecho!",
     "accept": "Aceptar",
     "text": "Su solicitud ya está entre nosotros! Nos pondremos en contacto con usted lo antes posible."
+  },
+  "error": {
+    "unknown": "Lo sentimos, ha ocurrido un error para procesar la solicitud, inténtelo más tarde."
   }
 }
