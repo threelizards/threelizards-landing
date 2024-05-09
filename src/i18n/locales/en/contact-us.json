@@ -4,5 +4,10 @@
     "phone": "Phone",
     "email": "Email",
     "description": "Description"
+  },
+  "modal": {
+    "title": "Done!",
+    "accept": "Accept",
+    "text": "Your request is already with us! We will contact you as soon as possible."
   }
 }

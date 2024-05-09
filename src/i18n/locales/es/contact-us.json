@@ -4,5 +4,10 @@
     "phone": "Teléfono",
     "email": "Correo",
     "description": "Descripción"
+  },
+  "modal": {
+    "title": "Hecho!",
+    "accept": "Aceptar",
+    "text": "Su solicitud ya está entre nosotros! Nos pondremos en contacto con usted lo antes posible."
   }
 }
