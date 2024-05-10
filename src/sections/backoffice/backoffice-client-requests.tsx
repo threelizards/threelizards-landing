@@ -1,9 +1,11 @@
-import { backendService } from '@/services/backend';
 import React from 'react';
+import { backendService } from '@/services/backend';
+import BackOfficeClientRequestsTable from './backoffice-client-requests-table';
 
 const BackOfficeClientRequests = async () => {
-  const clientRequest = await backendService.clientRequest.getClientRequests();
-  return <div>{JSON.stringify(clientRequest)}</div>;
+  const clientRequests = await backendService.clientRequest.getClientRequests();
+
+  return <BackOfficeClientRequestsTable {...{ clientRequests }} />;
 };
 
 export default BackOfficeClientRequests;

@@ -2,7 +2,7 @@
 
 import { MoonIcon } from '@/assets/icons/components/moon-icon';
 import { SunIcon } from '@/assets/icons/components/sun-icon';
-import { Switch } from '@nextui-org/react';
+import { Switch } from '@nextui-org/switch';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 

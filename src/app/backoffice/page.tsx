@@ -3,7 +3,7 @@ import BackOfficeClientRequests from '@/sections/backoffice/backoffice-client-re
 
 const BackOfficePage = () => {
   return (
-    <div>
+    <div className='p-8'>
       <BackOfficeClientRequests />
     </div>
   );

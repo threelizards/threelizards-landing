@@ -3,7 +3,8 @@
 import React from 'react';
 import { useI18NContext } from '@/i18n/context';
 import { languageObjects } from '@/i18n/settings';
-import { Avatar, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/react';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-org/dropdown';
+import { Avatar } from '@nextui-org/avatar';
 import { LanguageOptions } from '@/i18n/types';
 
 const LanguageSwitcher = () => {

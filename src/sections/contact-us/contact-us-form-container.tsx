@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { contactUSchema, contactUsDefaultValues } from './contact-us-form-options';
 import { frontendService } from '@/services/frontend';
 import ContactUsModal from './contact-us-modal';
-import { useDisclosure } from '@nextui-org/react';
+import { useDisclosure } from '@nextui-org/modal';
 import { useRouter } from 'next/navigation';
 import { routes } from '@/lib/routes';
 import { toast } from 'react-toastify';
