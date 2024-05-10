@@ -7,7 +7,7 @@ export const GET = async () => {
 };
 
 export const POST = async (request: Request) => {
-  const data = await request.json();
+  const data = (await request.json()).data;
   await backendService.clientRequest.createClientRequest(data);
   return new NextResponse('ok', { status: 200 });
 };

@@ -2,8 +2,12 @@
   "title": "Contáctenos",
   "form": {
     "phone": "Teléfono",
+    "phone_required": "Por favor, llene este campo o introduzca su correo.",
     "email": "Correo",
-    "description": "Descripción"
+    "email_required": "Por favor, llene este campo o introduzca su número de teléfono.",
+    "email_invalid": "Por favor, introduzca un correo válido.",
+    "description": "Descripción",
+    "description_required": "Por favor, danos una breve descripción de su idea."
   },
   "modal": {
     "title": "Hecho!",

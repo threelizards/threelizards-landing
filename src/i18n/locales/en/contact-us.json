@@ -2,8 +2,12 @@
   "title": "Contact us",
   "form": {
     "phone": "Phone",
+    "phone_required": "Please, fill this field or introduce your email.",
     "email": "Email",
-    "description": "Description"
+    "email_required": "Please, fill this field or introduce your phone number.",
+    "email_invalid": "Please, introduce a valid email.",
+    "description": "Description",
+    "description_required": "Please, give us a brief description of your idea."
   },
   "modal": {
     "title": "Done!",

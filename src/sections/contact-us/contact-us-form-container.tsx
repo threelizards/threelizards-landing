@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContactUsForm from './contact-us-form';
 import { useForm } from 'react-hook-form';
 import FormProvider from '@/components/form/form-provider';
@@ -18,7 +18,7 @@ const ContactUsFormContainer = () => {
   const methods = useForm({ resolver: zodResolver(contactUSchema), defaultValues: contactUsDefaultValues });
   const { isOpen, onOpen } = useDisclosure();
   const { t } = useTranslationClient('contact-us');
-  const { handleSubmit } = methods;
+  const { handleSubmit, watch, trigger } = methods;
   const router = useRouter();
 
   const onSubmit = handleSubmit(async (data) => {
@@ -29,6 +29,13 @@ const ContactUsFormContainer = () => {
       toast(t('error.unknown'), { type: 'error' });
     }
   });
+
+  const [phone, email] = watch(['phone', 'email']);
+
+  useEffect(() => {
+    if (phone) trigger('email');
+    if (email) trigger('phone');
+  }, [phone, email]);
 
   const onClose = () => {
     router.push(routes.root);
