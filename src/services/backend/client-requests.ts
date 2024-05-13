@@ -11,3 +11,7 @@ export const createClientRequest = async (clientRequest: IClientRequestCreate) =
   const creation_date = new Date();
   return await prisma.client_requests.create({ data: { ...clientRequest, id, creation_date } });
 };
+
+export const deleteClientRequest = async (id: string) => {
+  return await prisma.client_requests.delete({ where: { id } });
+};

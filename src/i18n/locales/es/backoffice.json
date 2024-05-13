@@ -4,5 +4,9 @@
   "email": "Correo",
   "phone": "Teléfono",
   "description": "Descripción",
-  "actions": "Acciones"
+  "actions": "Acciones",
+  "refresh": "Refrescar",
+  "empty_content": "No hay solicitudes por ahora",
+  "delete_request": "Borrar solicitud",
+  "delete_error": "Ha ocurrido un error al borrar la solicitud."
 }

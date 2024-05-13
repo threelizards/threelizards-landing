@@ -4,5 +4,9 @@
   "email": "Email",
   "phone": "Phone",
   "description": "Description",
-  "actions": "Actions"
+  "actions": "Actions",
+  "empty_content": "No requests to show",
+  "refresh": "Refresh",
+  "delete_request": "Delete Request",
+  "delete_error": "Something went wrong deleting the request."
 }

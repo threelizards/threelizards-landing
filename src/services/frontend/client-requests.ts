@@ -7,9 +7,9 @@ export const getClientRequests = async () => {
 };
 
 export const createClientRequest = async (clientRequest: IClientRequestCreate) => {
-  return await fetcher.post('api/client-request', {
-    body: JSON.stringify(clientRequest),
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' }
-  });
+  return await fetcher.post('api/client-request', clientRequest);
+};
+
+export const deleteClientRequest = async (id: string) => {
+  return await fetcher.delete(`api/client-request/${id}`);
 };

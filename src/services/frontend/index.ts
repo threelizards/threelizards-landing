@@ -1,3 +1,3 @@
-import { createClientRequest, getClientRequests } from './client-requests';
+import { createClientRequest, getClientRequests, deleteClientRequest } from './client-requests';
 
-export const frontendService = { clientRequest: { getClientRequests, createClientRequest } };
+export const frontendService = { clientRequest: { getClientRequests, createClientRequest, deleteClientRequest } };

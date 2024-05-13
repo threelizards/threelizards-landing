@@ -9,7 +9,7 @@ export const palette = {
     600: '#0bd6fa',
     700: '#48e0fb',
     800: '#85ebfd',
-    900: '#c2f5fe',
+    900: '#c2f5fe'
   },
   secondary: {
     DEFAULT: '#df8e1f',
@@ -21,7 +21,7 @@ export const palette = {
     600: '#e7a64b',
     700: '#edbc78',
     800: '#f3d2a5',
-    900: '#f9e9d2',
+    900: '#f9e9d2'
   },
   secondary2: {
     DEFAULT: '#7ab500',
@@ -33,7 +33,7 @@ export const palette = {
     600: '#a3f500',
     700: '#bdff38',
     800: '#d3ff7a',
-    900: '#e9ffbd',
+    900: '#e9ffbd'
   },
   gray: {
     DEFAULT: '#f1f6fe',
@@ -45,6 +45,6 @@ export const palette = {
     600: '#f4f8fe',
     700: '#f6f9fe',
     800: '#f9fbff',
-    900: '#fcfdff',
-  },
+    900: '#fcfdff'
+  }
 };

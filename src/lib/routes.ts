@@ -1,4 +1,5 @@
 export const routes = {
   root: '/',
-  contact_us: '/contact-us'
+  contact_us: '/contact-us',
+  backoffice: '/backoffice'
 };

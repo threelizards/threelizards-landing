@@ -3,11 +3,11 @@ import { NextResponse } from 'next/server';
 
 export const GET = async () => {
   const clientRequests = await backendService.clientRequest.getClientRequests();
-  return clientRequests;
+  return NextResponse.json(clientRequests);
 };
 
 export const POST = async (request: Request) => {
-  const data = (await request.json()).data;
+  const data = await request.json();
   await backendService.clientRequest.createClientRequest(data);
   return new NextResponse('ok', { status: 200 });
 };

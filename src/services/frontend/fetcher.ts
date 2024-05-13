@@ -11,6 +11,13 @@ export const fetcher = {
       ...init
     });
     return handleResponseData(res);
+  },
+  delete: async (url: string, init?: RequestInit) => {
+    const res = await fetch(url, {
+      method: 'DELETE',
+      ...init
+    });
+    return handleResponseData(res);
   }
 };
 
