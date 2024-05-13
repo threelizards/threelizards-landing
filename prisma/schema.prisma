@@ -13,5 +13,5 @@ model client_requests {
   email         String?
   phone         String?
   description   String?
-  creation_date DateTime @db.Timetz(6)
+  creation_date DateTime @db.Timestamptz(6)
 }
