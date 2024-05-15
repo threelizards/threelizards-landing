@@ -5,6 +5,8 @@ import { H1, Caption1 } from '@/theme/typography';
 import { useTranslationServer } from '@/i18n';
 import { Button } from '@nextui-org/button';
 import { palette } from '../../theme/palette';
+import { Link } from '@nextui-org/link';
+import { routes } from '@/lib/routes';
 
 const PresentationSection = async () => {
   const { t } = await useTranslationServer('presentation-section');
@@ -22,7 +24,7 @@ const PresentationSection = async () => {
         </span>
       </div>
       <div className='absolute inset-0 flex items-end justify-center'>
-        <Button className='-translate-y-4 ' color='success' variant='ghost'>
+        <Button className='-translate-y-4 ' color='success' variant='ghost' as={Link} href={routes.contact_us}>
           {t('contact')}
         </Button>
       </div>

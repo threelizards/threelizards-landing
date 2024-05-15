@@ -7,6 +7,8 @@ import { Image } from '@nextui-org/image';
 import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
 import { Button } from '@nextui-org/button';
 import { useTranslationServer } from '@/i18n';
+import { Link } from '@nextui-org/link';
+import { routes } from '@/lib/routes';
 
 const Header = async () => {
   const { t } = await useTranslationServer('general');
@@ -18,7 +20,7 @@ const Header = async () => {
       </NavbarBrand>
       <NavbarContent justify='end'>
         <NavbarItem>
-          <Button color='success' variant='ghost'>
+          <Button color='success' variant='ghost' as={Link} href={routes.contact_us}>
             {t('contact')}
           </Button>
         </NavbarItem>
