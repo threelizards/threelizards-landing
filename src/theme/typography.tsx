@@ -13,40 +13,40 @@ export const H1: React.FC<HeadingProps> = ({ children, className, ...props }) =>
 
 export const H2: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
-    <h1 className={clsx(twMerge('font-semibold text-3xl', className))} {...props}>
+    <h2 className={clsx(twMerge('font-semibold text-3xl', className))} {...props}>
       {children}
-    </h1>
+    </h2>
   );
 };
 
 export const H3: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
-    <h1 className={clsx(twMerge('font-semibold text-2xl', className))} {...props}>
+    <h3 className={clsx(twMerge('font-semibold text-2xl', className))} {...props}>
       {children}
-    </h1>
+    </h3>
   );
 };
 
 export const H4: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
-    <h1 className={clsx(twMerge('font-semibold text-xl', className))} {...props}>
+    <h4 className={clsx(twMerge('font-semibold text-xl', className))} {...props}>
       {children}
-    </h1>
+    </h4>
   );
 };
 
 export const Caption1: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
-    <h1 className={clsx(twMerge('font-bold text-base md:text-xl lg:text-2xl', className))} {...props}>
+    <p className={clsx(twMerge('font-bold text-base md:text-xl lg:text-2xl', className))} {...props}>
       {children}
-    </h1>
+    </p>
   );
 };
 
 export const P: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
-    <h1 className={clsx(twMerge('font-normal text-base md:text-xl lg:text-2xl', className))} {...props}>
+    <p className={clsx(twMerge('font-normal text-base md:text-xl lg:text-2xl', className))} {...props}>
       {children}
-    </h1>
+    </p>
   );
 };
