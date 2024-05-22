@@ -1,16 +1,24 @@
 import enFlag from '@/assets/flags/us.svg';
 import esFlag from '@/assets/flags/es.webp';
 import { NextImageImport } from '@/types/utils';
-import { LanguageOptions } from './types';
+import { LanguageObject, LanguageOptions } from './types';
+import countries from 'i18n-iso-countries';
+import countriesEs from 'i18n-iso-countries/langs/es.json';
+import countriesEN from 'i18n-iso-countries/langs/en.json';
 
-export const languageObjects = [
+countries.registerLocale(countriesEs);
+countries.registerLocale(countriesEN);
+
+export const languageObjects: LanguageObject[] = [
   {
     code: 'en',
-    flag: enFlag as NextImageImport
+    flag: enFlag as NextImageImport,
+    countries: countries.getNames('en')
   },
   {
     code: 'es',
-    flag: esFlag as NextImageImport
+    flag: esFlag as NextImageImport,
+    countries: countries.getNames('es')
   }
 ] as const;
 

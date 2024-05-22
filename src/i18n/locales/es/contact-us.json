@@ -3,6 +3,7 @@
   "form": {
     "phone": "Teléfono",
     "phone_required": "Por favor, llene este campo o introduzca su correo.",
+    "phone_invalid": "Por favor, escriba un teléfono válido.",
     "email": "Correo",
     "email_required": "Por favor, llene este campo o introduzca su número de teléfono.",
     "email_invalid": "Por favor, introduzca un correo válido.",

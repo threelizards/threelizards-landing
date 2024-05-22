@@ -1,3 +1,4 @@
+import { isValidPhoneNumber } from 'libphonenumber-js';
 import { z } from 'zod';
 
 export const contactUSchema = z
@@ -29,6 +30,13 @@ export const contactUSchema = z
           path: ['email']
         });
       }
+    }
+    if (phone && !isValidPhoneNumber(phone)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'form.phone_invalid',
+        path: ['phone']
+      });
     }
   });
 
