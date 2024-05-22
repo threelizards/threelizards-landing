@@ -1,0 +1,8 @@
+{
+  "modal": {
+    "title": "Select the country",
+    "search": "Search",
+    "search_placeholder": "Type to search...",
+    "empty": "No items"
+  }
+}

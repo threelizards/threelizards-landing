@@ -1,0 +1,8 @@
+{
+  "modal": {
+    "title": "Seleccione el país",
+    "search": "Buscar",
+    "search_placeholder": "Escriba para buscar...",
+    "empty": "Ningún elemento"
+  }
+}

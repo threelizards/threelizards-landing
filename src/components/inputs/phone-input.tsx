@@ -5,9 +5,13 @@ import { useI18NContext } from '@/i18n/context';
 import { Listbox, ListboxItem } from '@nextui-org/listbox';
 import { CountryCode, getCountryCallingCode, isSupportedCountry, AsYouType } from 'libphonenumber-js';
 import { Selection } from '@nextui-org/react';
+import { useTranslationClient } from '@/i18n/client';
+import { SearchIcon } from '@/assets/icons/components/search-icon';
 
 const PhoneInput: React.FC<InputProps> = ({ onChange, ...props }) => {
+  const { t } = useTranslationClient('phone-input');
   const [country, setCountry] = useState('CU');
+  const [search, setSearch] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { getLocales } = useI18NContext();
@@ -47,11 +51,21 @@ const PhoneInput: React.FC<InputProps> = ({ onChange, ...props }) => {
     [supportedCountries]
   );
 
+  const filteredCountries = useMemo(
+    () =>
+      orderedCountries.filter(
+        ([code, name]) =>
+          code.toLowerCase().includes(search.toLowerCase()) || name.toLowerCase().includes(search.toLowerCase())
+      ),
+    [orderedCountries, search]
+  );
+
   return (
     <>
       <Input
         {...props}
         maxLength={20}
+        type='tel'
         startContent={
           <div className='flex gap-2 items-center text-default-800 text-small'>
             <div className='cursor-pointer' onClick={onOpen}>
@@ -61,22 +75,38 @@ const PhoneInput: React.FC<InputProps> = ({ onChange, ...props }) => {
           </div>
         }
         onKeyDown={(e) => {
-          if (e.key !== 'Backspace' && !(Number(e.key) + 1)) e.preventDefault();
+          if ((e.key !== 'Backspace' && !(Number(e.key) + 1)) || e.key === ' ') {
+            e.preventDefault();
+          }
         }}
         value={phoneNumber}
         onChange={handleFormatNumber}
       />
-      <Modal scrollBehavior='inside' {...{ isOpen, onClose }}>
+      <Modal {...{ isOpen, onClose }}>
         <ModalContent>
-          <ModalHeader className='flex flex-col gap-1'>{'modal.title'}</ModalHeader>
+          <ModalHeader className='flex flex-col gap-1'>{t('modal.title')}</ModalHeader>
           <ModalBody>
+            <Input
+              size='sm'
+              startContent={
+                <div className='flex justify-center items-center w-5 h-5'>
+                  <SearchIcon width={14} height={14} />
+                </div>
+              }
+              placeholder={t('modal.search_placeholder')}
+              label={t('modal.search')}
+              value={search}
+              onValueChange={setSearch}
+            />
             <Listbox
+              className='overflow-auto h-60'
               selectionMode='single'
               disallowEmptySelection
               selectedKeys={[country]}
               aria-label='Countries'
+              emptyContent={t('modal.empty')}
               onSelectionChange={handleSelectionCountryChange}>
-              {orderedCountries.map(([code, name]) => (
+              {filteredCountries.map(([code, name]) => (
                 <ListboxItem key={code}>{name}</ListboxItem>
               ))}
             </Listbox>
