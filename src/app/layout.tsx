@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import acceptLanguage from 'accept-language';
 import { I18NProvider } from '@/i18n/context';
 import AppLayout from '@/sections/app/app-layout';
@@ -10,7 +10,10 @@ import './globals.css';
 import { getCurrentLanguage } from '@/i18n';
 import ToastContainer from '@/components/toast/toast-container';
 
-const inter = Inter({ subsets: ['latin'] });
+const poppins = Poppins({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin']
+});
 
 export const metadata: Metadata = {
   title: 'Three Lizards',
@@ -26,7 +29,7 @@ export default function RootLayout({
   const lng = getCurrentLanguage();
   return (
     <html lang={lng} suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen`}>
+      <body className={`${poppins.className} min-h-screen`}>
         <I18NProvider {...{ lng }}>
           <NextUIWithRouterProvider>
             <ToastContainer>
