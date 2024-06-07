@@ -1,7 +1,7 @@
 import Palette from '@/components/palette/palette';
 import { useTranslationServer } from '@/i18n';
 import { palette } from '@/theme/palette';
-import { Caption1, H1, H2, H3, H4, P } from '@/theme/typography';
+import { Caption1, Caption2, H1, H2, H3, H4, H5, P, Subtitle1, Subtitle2 } from '@/theme/typography';
 import React from 'react';
 
 const ThemePage = async () => {
@@ -37,8 +37,12 @@ const ThemePage = async () => {
           <H2>H2: Lorem ipsum dolor sit amet consectetur adipisicing elit.</H2>
           <H3>H3: Lorem ipsum dolor sit amet consectetur adipisicing elit.</H3>
           <H4>H4: Lorem ipsum dolor sit amet consectetur adipisicing elit.</H4>
-          <P>P: Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+          <H5>H5: Lorem ipsum dolor sit amet consectetur adipisicing elit.</H5>
           <Caption1>Caption1: Lorem ipsum dolor sit amet consectetur adipisicing elit.</Caption1>
+          <Caption2>Caption2: Lorem ipsum dolor sit amet consectetur adipisicing elit.</Caption2>
+          <P>P: Lorem ipsum dolor sit amet consectetur adipisicing elit.</P>
+          <Subtitle1>Subtitle1: Lorem ipsum dolor sit amet consectetur adipisicing elit.</Subtitle1>
+          <Subtitle2>Subtitle2: Lorem ipsum dolor sit amet consectetur adipisicing elit.</Subtitle2>
         </div>
       </div>
     </div>
