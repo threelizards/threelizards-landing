@@ -7,7 +7,7 @@ import { phoneContact, ubication } from '@/lib/config';
 const InformationSection = async () => {
   return (
     <section className='w-full pt-8'>
-      <div className='flex flex-col flex-wrap items-center justify-center gap-y-6 gap-x-6 bg-white text-center '>
+      <div className='flex flex-col flex-wrap items-center justify-center gap-6 text-center '>
         <div className='flex items-center md:flex-row md:items-center justify-center'>
           <Image src={Logo.src} alt='Logo de Three Lizards' width={64} height={64} />
           <H3>Three Lizards</H3>
