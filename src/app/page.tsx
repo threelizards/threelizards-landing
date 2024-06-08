@@ -1,6 +1,7 @@
 import PresentationSection from '@/sections/home/presentation-section';
 import Section2 from '@/sections/home/section-2';
-import Footer from '@/sections/home/footer';
+import InformationSection from '@/sections/home/information-section';
+import FooterSection from '@/sections/home/footer-section';
 
 export default function Home() {
   return (
@@ -14,8 +15,8 @@ export default function Home() {
       <Section2 />
       <Section2 />
       <Section2 />
-      <Section2 />
-      <Footer />
+      <InformationSection />
+      <FooterSection />
     </div>
   );
 }
