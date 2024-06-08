@@ -67,6 +67,14 @@ export const P: React.FC<HeadingProps> = ({ children, className, ...props }) => 
   );
 };
 
+export const Subtitle: React.FC<HeadingProps> = ({ children, className, ...props }) => {
+  return (
+    <p className={clsx(twMerge('font-medium text-sm md:text-base lg:text-lg', className))} {...props}>
+      {children}
+    </p>
+  );
+};
+
 export const Subtitle1: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
     <p className={clsx(twMerge('font-medium text-xs md:text-xs lg:text-sm', className))} {...props}>
