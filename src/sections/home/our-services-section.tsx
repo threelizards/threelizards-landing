@@ -9,7 +9,7 @@ import { EditIcon } from '@/assets/icons/components/edit-icon';
 const OurServicesSection = async () => {
   const { t } = await useTranslationServer('our-services-section');
   return (
-    <div className='flex flex-col gap-12 items-center px-8 my-10 max-w-7xl'>
+    <section className='flex flex-col gap-12 items-center px-8 my-10 max-w-7xl'>
       <div className='flex flex-col gap-2 text-center max-w-2xl'>
         <H2>{t('title')}</H2>
         <H5>{t('subtitle')}</H5>
@@ -30,7 +30,7 @@ const OurServicesSection = async () => {
           subtitle={t('responsive_design_info')}
         />
       </div>
-    </div>
+    </section>
   );
 };
 

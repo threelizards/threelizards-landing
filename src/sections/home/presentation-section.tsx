@@ -1,12 +1,9 @@
 import React from 'react';
 import girlPhoto from '@/assets/images/sexy-girl.webp';
 import Image from 'next/image';
-import { H1, Caption1, Subtitle } from '@/theme/typography';
+import { H1, Subtitle } from '@/theme/typography';
 import { useTranslationServer } from '@/i18n';
 import { Button } from '@nextui-org/button';
-import { palette } from '../../theme/palette';
-import { Link } from '@nextui-org/link';
-import { routes } from '@/lib/routes';
 
 const PresentationSection = async () => {
   const { t } = await useTranslationServer('presentation-section');
