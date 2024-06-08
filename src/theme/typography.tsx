@@ -43,6 +43,14 @@ export const H5: React.FC<HeadingProps> = ({ children, className, ...props }) =>
   );
 };
 
+export const Caption: React.FC<HeadingProps> = ({ children, className, ...props }) => {
+  return (
+    <p className={clsx(twMerge('font-semibold text-sm md:text-base lg:text-lg', className))} {...props}>
+      {children}
+    </p>
+  );
+};
+
 export const Caption1: React.FC<HeadingProps> = ({ children, className, ...props }) => {
   return (
     <p className={clsx(twMerge('font-semibold text-xs md:text-sm lg:text-base', className))} {...props}>
