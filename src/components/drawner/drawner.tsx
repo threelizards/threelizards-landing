@@ -37,7 +37,7 @@ const OptionsDrawer = () => {
         className={clsx('z-20 fixed w-screen h-screen top-0 right-0 bg-[rgba(0,0,0,0.5)]', { hidden: !isOpen })}
         onClick={toggleDrawer}></div>
       <div
-        className={clsx('z-30 fixed top-0 right-0 h-screen transition-all bg-gray-50 dark:bg-gray-900 shadow-2xl', {
+        className={clsx('z-30 fixed top-0 right-0 h-dvh transition-all bg-gray-50 dark:bg-gray-900 shadow-2xl', {
           'w-0': !isOpen,
           'w-80': isOpen
         })}>
