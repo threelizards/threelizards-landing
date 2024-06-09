@@ -4,7 +4,7 @@ import FAQList from '@/components/faq/faq-list';
 
 const FAQSection = () => {
   return (
-    <section className='flex flex-col lg:flex-row lg:justify-between p-8  max-w-7xl '>
+    <section className='flex flex-col lg:flex-row lg:justify-between p-8 gap-6 max-w-7xl '>
       <FAQHeader />
       <FAQList />
     </section>

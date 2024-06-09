@@ -9,11 +9,13 @@ const FAQHeader: React.FC = async () => {
   const { t } = await useTranslationServer('faq-section');
   return (
     <div className='flex flex-col gap-y-4'>
-      <H2 className='text-xl font-semibold'>{t('title')}</H2>
-      <Subtitle className='opacity-60'>{t('subtitle')}</Subtitle>
-      <Button color='primary' variant='solid' as={Link} href={routes.contact_us} className='max-w-40  '>
-        {t('contact')}
-      </Button>
+      <H2 className='text-xl font-semibold text-center lg:text-start'>{t('title')}</H2>
+      <Subtitle className='opacity-60 text-center lg:text-start'>{t('subtitle')}</Subtitle>
+      <div className='flex justify-center lg:justify-start'>
+        <Button color='primary' variant='solid' as={Link} href={routes.contact_us} className='max-w-40'>
+          {t('contact')}
+        </Button>
+      </div>
     </div>
   );
 };
