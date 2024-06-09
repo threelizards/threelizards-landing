@@ -1,13 +1,11 @@
 import React from 'react';
-import girlPhoto from '@/assets/images/sexy-girl.webp';
-import Image from 'next/image';
 import { H1, Subtitle } from '@/theme/typography';
 import { useTranslationServer } from '@/i18n';
 import { Button } from '@nextui-org/button';
+import PresentationPhoto from './presentation-photo';
 
 const PresentationSection = async () => {
   const { t } = await useTranslationServer('presentation-section');
-
   return (
     <section className='flex flex-col lg:flex-row gap-6 lg:gap-24 max-w-7xl items-center px-8 my-10'>
       <div className='flex flex-col w-full gap-6 text-center lg:text-start items-center lg:items-start'>
@@ -20,7 +18,7 @@ const PresentationSection = async () => {
         </Button>
       </div>
       <div className='relative w-full flex flex-col items-center lg:items-start'>
-        <Image src={girlPhoto} alt='Worker girl' />
+        <PresentationPhoto />
       </div>
     </section>
   );
