@@ -14,7 +14,7 @@ const OurServicesSection = async () => {
         <H2>{t('title')}</H2>
         <H5>{t('subtitle')}</H5>
       </div>
-      <div className='grid grid-cols-3 [&>div]:border [&>div]:border-solid [&>div]:border-[rgba(0,0,0,0.1)] [&>div:nth-child(3n+1)]:border-l-0 [&>div:nth-child(3n)]:border-r-0 [&>div:nth-child(-n+3)]:border-t-0 [&>div:nth-last-child(-n+3)]:border-b-0'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 [&>div]:border [&>div]:border-none sm:[&>div]:border-solid [&>div]:border-[rgba(0,0,0,0.1)] dark:[&>div]:border-[rgba(255,255,255,0.1)] [&>div:nth-child(2n+1)]:border-l-0 md:[&>div:nth-child(3n+1)]:border-l-0 [&>div:nth-child(2n)]:border-r-0 md:[&>div:nth-child(2n)]:border-r-2 md:[&>div:nth-child(3n)]:border-r-0 [&>div:nth-child(-n+2)]:border-t-0 md:[&>div:nth-child(-n+3)]:border-t-0 [&>div:nth-last-child(-n+2)]:border-b-0 md:[&>div:nth-last-child(-n+3)]:border-b-0'>
         <Service icon={<WebIcon />} title={t('web_dev')} subtitle={t('web_dev_info')} />
         <Service icon={<HiOutlineChartPie size={32} />} title={t('web_commerce')} subtitle={t('web_commerce_info')} />
         <Service

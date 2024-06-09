@@ -9,7 +9,7 @@ interface ServiceProps {
 
 const Service: React.FC<ServiceProps> = ({ icon, title, subtitle }) => {
   return (
-    <div className='flex flex-col gap-2 py-8 pl-8 pr-14'>
+    <div className='flex flex-col items-center sm:items-start text-center sm:text-start gap-2 py-8 pl-8 pr-14'>
       <div className='bg-primary p-3 rounded-xl w-fit text-white'>{icon}</div>
       <div className='flex flex-col gap-1'>
         <Caption>{title}</Caption>
