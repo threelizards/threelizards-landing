@@ -26,7 +26,7 @@ const Header = async () => {
           <LanguageSwitcher />
         </NavbarItem>
         <NavbarItem>
-          <Button color='success' variant='ghost' as={Link} href={routes.contact_us}>
+          <Button color='primary' variant='ghost' as={Link} href={routes.contact_us}>
             {t('contact')}
           </Button>
         </NavbarItem>
