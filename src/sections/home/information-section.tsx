@@ -12,11 +12,15 @@ const InformationSection = async () => {
           <Image src={Logo.src} alt='Logo de Three Lizards' width={64} height={64} />
           <H3>Three Lizards</H3>
         </div>
-        <div className='flex items-center space-x-4'>
-          <FaPhoneAlt className='text-lg' />
-          <span>{phoneContact}</span>
-          <FaMapMarkerAlt className='text-lg ml-4' />
-          <span>{ubication}</span>
+        <div className='grid-cols space-y-2 sm:flex items-center justify-center'>
+          <div className='flex space-x-2'>
+            <FaPhoneAlt className='text-lg' />
+            <span>{phoneContact}</span>
+          </div>
+          <div className='flex space-x-2'>
+            <FaMapMarkerAlt className='text-lg ml-4' />
+            <span>{ubication}</span>
+          </div>
         </div>
       </div>
       <hr className='mt-6 border-stone-400' />
