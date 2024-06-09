@@ -1,0 +1,19 @@
+{
+  "title": "Reseñas de nuestros clientes:",
+  "subtitle": "Descubre cómo hemos ayudado a personas y negocios como el tuyo a alcanzar el éxito en línea.",
+  "average": "Reseñas promedio basadas en los últimos diez clientes",
+  "stories": {
+    "olivia": {
+      "name": "Olivia Rhye",
+      "story": "Como diseñador gráfico, AI Image Generator se ha convertido en mi herramienta de referencia. Se integra perfectamente con mi flujo de trabajo creativo, permitiéndome explorar nuevos estilos."
+    },
+    "james": {
+      "name": "James Rodriguez",
+      "story": "Como especialista en marketing, las imágenes son cruciales para mis campañas. El generador de imágenes AI no solo ahorra tiempo sino que también agrega un estilo único a mis imágenes."
+    },
+    "alexandra": {
+      "name": "Alexandra Lee",
+      "story": "No soy diseñador de profesión, pero AI Image Generator me ha permitido crear imágenes más allá de mi imaginación. Es fácil de usar y las opciones de personalización me permiten adaptar las imágenes a mi gusto."
+    }
+  }
+}
