@@ -5,6 +5,7 @@ import InformationSection from '@/sections/home/information-section';
 import FooterSection from '@/sections/home/footer-section';
 import CustomerStoriesSection from '@/sections/home/customer-stories-section';
 import ContactSection from '@/sections/home/contact-section';
+import FAQSection from '@/sections/home/question-section';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <PresentationSection />
       <OurServicesSection />
       <CustomerStoriesSection />
-      <Section2 />
+      <FAQSection />
       <ContactSection />
       <InformationSection />
       <FooterSection />
