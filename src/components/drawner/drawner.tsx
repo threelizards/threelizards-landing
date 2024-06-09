@@ -2,7 +2,7 @@
 
 import { Button, Divider } from '@nextui-org/react';
 import clsx from 'clsx';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HiBars3 } from 'react-icons/hi2';
 import Logo from '@/assets/logo/logo-no-bg.png';
 import LanguageSwitcher from '../language-switcher/language-switcher';
@@ -19,6 +19,17 @@ const OptionsDrawer = () => {
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (body) {
+      if (isOpen) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = 'auto';
+      }
+    }
+  }, [isOpen]);
 
   return (
     <>
