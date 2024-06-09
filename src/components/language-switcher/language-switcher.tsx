@@ -16,7 +16,7 @@ const LanguageSwitcher = () => {
           size='sm'
           isBordered
           as='button'
-          className='transition-transform mr-8'
+          className='transition-transform mr-2'
           fallback={language}
           src={languageObjects.find(({ code }) => code === language)?.flag.src}
         />

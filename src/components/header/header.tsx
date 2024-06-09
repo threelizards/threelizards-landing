@@ -20,15 +20,15 @@ const Header = async () => {
       </NavbarBrand>
       <NavbarContent justify='end'>
         <NavbarItem>
-          <Button color='success' variant='ghost' as={Link} href={routes.contact_us}>
-            {t('contact')}
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
         <NavbarItem>
           <LanguageSwitcher />
+        </NavbarItem>
+        <NavbarItem>
+          <Button color='success' variant='ghost' as={Link} href={routes.contact_us}>
+            {t('contact')}
+          </Button>
         </NavbarItem>
       </NavbarContent>
     </Navbar>
