@@ -23,8 +23,8 @@ const CustomerStoriesSection = async () => {
         <H2>{t('title')}</H2>
         <H5 className='max-w-2xl'>{t('subtitle')}</H5>
       </div>
-      <div className='flex gap-8 w-full'>
-        <Card className='min-w-[411px]' shadow='sm'>
+      <div className='flex gap-8 w-full justify-center'>
+        <Card className='min-w-[411px] hidden lg:flex' shadow='sm'>
           <CardHeader className='p-4 flex-col items-start absolute z-10 top-1 left-2 gap-4'>
             <div className='flex items-baseline'>
               <H2>4.9</H2>
@@ -39,7 +39,7 @@ const CustomerStoriesSection = async () => {
             src={manSmiling.src}
           />
         </Card>
-        <div className='flex gap-4 rounded-xl border border-solid border-[rgba(0,0,0,0.1)] p-6 overflow-auto'>
+        <div className='flex items-center gap-4 rounded-xl border border-solid border-[rgba(0,0,0,0.1)] p-6 overflow-auto'>
           {stories.map(({ name, pic, rate }) => (
             <Story
               avatar={pic}
