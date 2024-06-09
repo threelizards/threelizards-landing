@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ContactUsForm from './contact-us-form';
 import { useForm } from 'react-hook-form';
 import FormProvider from '@/components/form/form-provider';
@@ -20,11 +20,16 @@ const ContactUsFormContainer = () => {
   const { t } = useTranslationClient('contact-us');
   const { handleSubmit, watch, trigger } = methods;
   const router = useRouter();
+  const [captcha, setCaptcha] = useState<string | null>(null);
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      await frontendService.clientRequest.createClientRequest(data);
-      onOpen();
+      if (captcha) {
+        await frontendService.clientRequest.createClientRequest(data, captcha);
+        onOpen();
+      } else {
+        toast(t('error.captcha'), { type: 'error' });
+      }
     } catch (error) {
       toast(t('error.unknown'), { type: 'error' });
     }
@@ -43,7 +48,7 @@ const ContactUsFormContainer = () => {
 
   return (
     <FormProvider {...{ onSubmit, methods }}>
-      <ContactUsForm />
+      <ContactUsForm {...{ setCaptcha }} />
       <ContactUsModal {...{ isOpen, onClose }} />
     </FormProvider>
   );

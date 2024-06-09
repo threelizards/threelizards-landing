@@ -6,8 +6,8 @@ export const getClientRequests = async () => {
   return clientRequests;
 };
 
-export const createClientRequest = async (clientRequest: IClientRequestCreate) => {
-  return await fetcher.post('api/client-request', clientRequest);
+export const createClientRequest = async (clientRequest: IClientRequestCreate, captcha: string | null) => {
+  return await fetcher.post(`api/client-request?captcha=${captcha}`, clientRequest);
 };
 
 export const deleteClientRequest = async (id: string) => {

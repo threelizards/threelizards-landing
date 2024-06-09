@@ -6,11 +6,21 @@ import FormTextArea from '@/components/form/form-text-area';
 import { useFormContext } from 'react-hook-form';
 import { IClientRequestCreate } from '@/types/client-request';
 import FormPhoneInput from '@/components/form/form-phone-input';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { RECAPTCHA_SITE_KEY } from '@/lib/config';
+import { useTheme } from 'next-themes';
+import { useI18NContext } from '@/i18n/context';
 
-const ContactUsForm = () => {
+interface ContactUsFormProps {
+  setCaptcha: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+const ContactUsForm: React.FC<ContactUsFormProps> = ({ setCaptcha }) => {
   const { t } = useTranslationClient('contact-us');
   const { watch } = useFormContext<IClientRequestCreate>();
   const [email, phone] = watch(['email', 'phone']);
+  const { theme } = useTheme();
+  const { language } = useI18NContext();
   return (
     <div className='flex flex-col gap-4 w-full'>
       <FormPhoneInput translateFile='contact-us' label={t('form.phone')} name='phone' isRequired={!email} />
@@ -21,6 +31,13 @@ const ContactUsForm = () => {
         name='description'
         isRequired
         maxLength={2048}
+      />
+      <ReCAPTCHA
+        sitekey={RECAPTCHA_SITE_KEY}
+        className='w-full'
+        theme={theme === 'dark' ? 'dark' : 'light'}
+        onChange={(token) => setCaptcha(token)}
+        hl={language}
       />
       <ContactUsFormButtons />
     </div>

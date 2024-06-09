@@ -16,6 +16,7 @@
     "text": "Su solicitud ya está entre nosotros! Nos pondremos en contacto con usted lo antes posible."
   },
   "error": {
-    "unknown": "Lo sentimos, ha ocurrido un error para procesar la solicitud, inténtelo más tarde."
+    "unknown": "Lo sentimos, ha ocurrido un error para procesar la solicitud, inténtelo más tarde.",
+    "captcha": "Por favor, verifique que no es un robot."
   }
 }

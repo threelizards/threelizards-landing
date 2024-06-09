@@ -16,6 +16,7 @@
     "text": "Your request is already with us! We will contact you as soon as possible."
   },
   "error": {
-    "unknown": "Sorry, an error occurred processing your request, please try again later."
+    "unknown": "Sorry, an error occurred processing your request, please try again later.",
+    "captcha": "Please, verify that you are not a robot."
   }
 }
