@@ -41,7 +41,7 @@ const OptionsDrawer = () => {
           'w-0': !isOpen,
           'w-80': isOpen
         })}>
-        <div className='flex flex-col h-full'>
+        <div className={clsx('flex flex-col h-full', { hidden: !isOpen })}>
           <div className='flex gap-2 items-center p-4'>
             <Image src={Logo.src} alt='Logo' width={64} height={64} />
             <H3>Three Lizards</H3>
