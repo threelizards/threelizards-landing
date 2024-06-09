@@ -29,7 +29,7 @@ export default function RootLayout({
   const lng = getCurrentLanguage();
   return (
     <html lang={lng} suppressHydrationWarning>
-      <body className={`${poppins.className} min-h-screen`}>
+      <body className={`${poppins.className} min-h-screen !overflow-x-hidden`}>
         <I18NProvider {...{ lng }}>
           <NextUIWithRouterProvider>
             <ToastContainer>
