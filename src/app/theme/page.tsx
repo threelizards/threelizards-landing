@@ -38,10 +38,6 @@ const ThemePage = async () => {
             <H3>{t('secondary-2')}</H3>
             <Palette colors={palette.secondary2} />
           </div>
-          <div className='flex flex-col gap-4'>
-            <H3>{t('gray')}</H3>
-            <Palette colors={palette.gray} />
-          </div>
         </div>
       </div>
       <div>

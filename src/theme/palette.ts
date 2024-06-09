@@ -35,17 +35,5 @@ export const palette = {
     700: '#48e0fb',
     800: '#85ebfd',
     900: '#c2f5fe'
-  },
-  gray: {
-    DEFAULT: '#f1f6fe',
-    100: '#06275d',
-    200: '#0d4fb9',
-    300: '#387ff1',
-    400: '#94baf8',
-    500: '#f1f6fe',
-    600: '#f4f8fe',
-    700: '#f6f9fe',
-    800: '#f9fbff',
-    900: '#fcfdff'
   }
 };

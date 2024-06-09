@@ -9,6 +9,7 @@ import { Button } from '@nextui-org/button';
 import { useTranslationServer } from '@/i18n';
 import { Link } from '@nextui-org/link';
 import { routes } from '@/lib/routes';
+import OptionsDrawer from '../drawner/drawner';
 
 const Header = async () => {
   const { t } = await useTranslationServer('general');
@@ -18,7 +19,7 @@ const Header = async () => {
         <Image src={Logo.src} alt='Logo' width={64} height={64} />
         <H3>Three Lizards</H3>
       </NavbarBrand>
-      <NavbarContent justify='end'>
+      <NavbarContent justify='end' className='hidden sm:flex'>
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
@@ -29,6 +30,11 @@ const Header = async () => {
           <Button color='primary' variant='ghost' as={Link} href={routes.contact_us}>
             {t('contact')}
           </Button>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify='end' className='flex sm:hidden'>
+        <NavbarItem>
+          <OptionsDrawer />
         </NavbarItem>
       </NavbarContent>
     </Navbar>

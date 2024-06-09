@@ -1,5 +1,7 @@
 {
   "contact": "Contact Us",
   "send": "Send",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "theme": "Theme",
+  "language": "Language"
 }
