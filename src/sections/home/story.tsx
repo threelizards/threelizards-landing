@@ -17,7 +17,7 @@ const Story: React.FC<StoryProps> = ({ rate, name, story, avatar }) => {
   return (
     <Card
       classNames={{
-        base: 'p-8 max-w-80 flex-[0_0_auto]',
+        base: 'p-8 max-w-80 h-[376px] flex-[0_0_auto]',
         header: 'gap-2 px-0 pt-0',
         body: 'opacity-60 px-0',
         footer: 'gap-2 px-0 pb-0'
