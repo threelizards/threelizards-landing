@@ -3,6 +3,8 @@ import { H1, Subtitle } from '@/theme/typography';
 import { useTranslationServer } from '@/i18n';
 import { Button } from '@nextui-org/button';
 import PresentationPhoto from './presentation-photo';
+import { routes } from '@/lib/routes';
+import { Link } from '@nextui-org/link';
 
 const PresentationSection = async () => {
   const { t } = await useTranslationServer('presentation-section');
@@ -13,7 +15,7 @@ const PresentationSection = async () => {
           {t('title')} <span className='text-primary'>{t('title2')}</span>
         </H1>
         <Subtitle>{t('subtitle')}</Subtitle>
-        <Button color='primary' variant='solid' className='max-w-40' size='lg'>
+        <Button color='primary' variant='solid' className='max-w-40' size='lg' as={Link} href={routes.contact_us}>
           {t('contact')}
         </Button>
       </div>
