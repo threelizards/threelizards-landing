@@ -1,11 +1,10 @@
 import { useTranslationClient } from '@/i18n/client';
-import { Input, InputProps } from '@nextui-org/input';
 import { Controller, useFormContext } from 'react-hook-form';
-import PhoneInput from '../inputs/phone-input';
+import PhoneInput, { PhoneInputProps } from '../inputs/phone-input';
 
 // ----------------------------------------------------------------------
 
-interface FormPhoneInputProps extends InputProps {
+interface FormPhoneInputProps extends PhoneInputProps {
   name: string;
   translateFile?: string;
 }

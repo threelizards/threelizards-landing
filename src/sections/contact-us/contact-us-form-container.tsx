@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useEffect, useState } from 'react';
 import ContactUsForm from './contact-us-form';
 import { useForm } from 'react-hook-form';
@@ -13,8 +12,14 @@ import { useRouter } from 'next/navigation';
 import { routes } from '@/lib/routes';
 import { toast } from 'react-toastify';
 import { useTranslationClient } from '@/i18n/client';
+import { PhoneInputProps } from '@/components/inputs/phone-input';
+import { CountryCode } from 'libphonenumber-js';
 
-const ContactUsFormContainer = () => {
+interface ContactUsFormProps {
+  initialCountry: CountryCode;
+}
+
+const ContactUsFormContainer: React.FC<ContactUsFormProps> = ({ initialCountry }) => {
   const methods = useForm({ resolver: zodResolver(contactUSchema), defaultValues: contactUsDefaultValues });
   const { isOpen, onOpen } = useDisclosure();
   const { t } = useTranslationClient('contact-us');
@@ -48,7 +53,7 @@ const ContactUsFormContainer = () => {
 
   return (
     <FormProvider {...{ onSubmit, methods }}>
-      <ContactUsForm {...{ setCaptcha }} />
+      <ContactUsForm {...{ setCaptcha, initialCountry }} />
       <ContactUsModal {...{ isOpen, onClose }} />
     </FormProvider>
   );

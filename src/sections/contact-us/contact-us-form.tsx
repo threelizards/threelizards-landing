@@ -10,20 +10,29 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { RECAPTCHA_SITE_KEY } from '@/lib/config';
 import { useTheme } from 'next-themes';
 import { useI18NContext } from '@/i18n/context';
+import { CountryCode } from 'libphonenumber-js';
 
 interface ContactUsFormProps {
+  initialCountry: CountryCode;
   setCaptcha: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-const ContactUsForm: React.FC<ContactUsFormProps> = ({ setCaptcha }) => {
+const ContactUsForm: React.FC<ContactUsFormProps> = ({ setCaptcha, initialCountry }) => {
   const { t } = useTranslationClient('contact-us');
   const { watch } = useFormContext<IClientRequestCreate>();
   const [email, phone] = watch(['email', 'phone']);
   const { theme } = useTheme();
   const { language } = useI18NContext();
+
   return (
     <div className='flex flex-col gap-4 w-full'>
-      <FormPhoneInput translateFile='contact-us' label={t('form.phone')} name='phone' isRequired={!email} />
+      <FormPhoneInput
+        translateFile='contact-us'
+        label={t('form.phone')}
+        name='phone'
+        isRequired={!email}
+        initialCountry={initialCountry}
+      />
       <FormInput translateFile='contact-us' label={t('form.email')} name='email' isRequired={!phone} maxLength={256} />
       <FormTextArea
         translateFile='contact-us'

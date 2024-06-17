@@ -7,22 +7,28 @@ import { CountryCode, getCountryCallingCode, isSupportedCountry, AsYouType } fro
 import { Selection } from '@nextui-org/react';
 import { useTranslationClient } from '@/i18n/client';
 import { SearchIcon } from '@/assets/icons/components/search-icon';
+import { fallbackCountry } from '@/lib/config';
 
-const PhoneInput: React.FC<InputProps> = ({ onChange, ...props }) => {
+export interface PhoneInputProps extends InputProps {
+  initialCountry: CountryCode;
+}
+
+const PhoneInput: React.FC<PhoneInputProps> = ({ initialCountry, onChange, ...props }) => {
   const { t } = useTranslationClient('phone-input');
-  const [country, setCountry] = useState('CU');
+  const [country, setCountry] = useState(isSupportedCountry(initialCountry) ? initialCountry : fallbackCountry);
   const [search, setSearch] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { getLocales } = useI18NContext();
   const { countries } = getLocales();
+
   const supportedCountries = useMemo(
     () => Object.entries(countries).filter(([code]) => isSupportedCountry(code)),
     [countries]
   );
 
   const handleSelectionCountryChange = (keys: Selection) => {
-    setCountry((keys as unknown as { anchorKey: string }).anchorKey);
+    setCountry((keys as unknown as { anchorKey: CountryCode }).anchorKey);
     onClose();
   };
 
