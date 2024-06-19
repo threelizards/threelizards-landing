@@ -1,6 +1,7 @@
 export const phoneContact = '+1 (813) 390-9392';
 export const ubication = 'Tampa, FL';
 export const email = 'threelizards.co@gmail.com';
+export const emailConfig = { subject: 'Three Lizards Notification' };
 export const socialLinks = {
   X: process.env.THREE_LIZARDS_X || '#',
   INSTAGRAM: process.env.THREE_LIZARDS_INSTAGRAM || '#',
@@ -14,3 +15,6 @@ export const RECAPTCHA_SERVER_VERIFY_URL = process.env.RECAPTCHA_SERVER_VERIFY_U
 export const IP_API = process.env.IP_API || '';
 export const fallbackCountry = 'US';
 export const GOOGLE_TGM_ID = process.env.NEXT_PUBLIC_GOOGLE_TGM_ID || '';
+export const gmailPass = process.env.GMAIL_PASS || '';
+export const gmailSMTP = process.env.GMAIL_SMTP || '';
+export const gmailPort = Number(process.env.GMAIL_PORT) || 587;

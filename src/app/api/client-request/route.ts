@@ -1,4 +1,5 @@
 import { RECAPTCHA_SECRET_KEY, RECAPTCHA_SERVER_VERIFY_URL } from '@/lib/config';
+import { sendEmailNotification } from '@/lib/email';
 import { backendService } from '@/services/backend';
 import { NextResponse } from 'next/server';
 
@@ -17,6 +18,7 @@ export const POST = async (request: Request) => {
   const isValidCaptcha = (await res.json()).success;
   if (isValidCaptcha) {
     await backendService.clientRequest.createClientRequest(data);
+    sendEmailNotification(data);
     return new NextResponse('ok', { status: 200 });
   } else {
     return new NextResponse('Invalid captcha', { status: 400 });

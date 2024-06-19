@@ -12,7 +12,6 @@ import { useRouter } from 'next/navigation';
 import { routes } from '@/lib/routes';
 import { toast } from 'react-toastify';
 import { useTranslationClient } from '@/i18n/client';
-import { PhoneInputProps } from '@/components/inputs/phone-input';
 import { CountryCode } from 'libphonenumber-js';
 
 interface ContactUsFormProps {
