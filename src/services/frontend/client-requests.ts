@@ -13,3 +13,7 @@ export const createClientRequest = async (clientRequest: IClientRequestCreate, c
 export const deleteClientRequest = async (id: string) => {
   return await fetcher.delete(`api/client-request/${id}`);
 };
+
+export const sendEmail = async (data: IClientRequestCreate) => {
+  return await fetcher.post(`api/email`, data);
+};
