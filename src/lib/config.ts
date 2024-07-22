@@ -13,3 +13,4 @@ export const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY || '';
 export const RECAPTCHA_SERVER_VERIFY_URL = process.env.RECAPTCHA_SERVER_VERIFY_URL || '';
 export const IP_API = process.env.IP_API || '';
 export const fallbackCountry = 'US';
+export const GOOGLE_TGM_ID = process.env.NEXT_PUBLIC_GOOGLE_TGM_ID || '';

@@ -9,6 +9,9 @@ import NextUIWithRouterProvider from '@/nextui/nextui-with-router-provider';
 import './globals.css';
 import { getCurrentLanguage } from '@/i18n';
 import ToastContainer from '@/components/toast/toast-container';
+import GoogleTagManagerHead from '@/components/google/google-tag-manager-head';
+import GoogleTagManagerBody from '@/components/google/google-tag-manager-body';
+import { GOOGLE_TGM_ID } from '@/lib/config';
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -29,7 +32,11 @@ export default function RootLayout({
   const lng = getCurrentLanguage();
   return (
     <html lang={lng} suppressHydrationWarning>
+      <head>
+        <GoogleTagManagerHead gtmId={GOOGLE_TGM_ID} />
+      </head>
       <body className={`${poppins.className} min-h-screen !overflow-x-hidden`}>
+        <GoogleTagManagerBody gtmId={GOOGLE_TGM_ID} />
         <I18NProvider {...{ lng }}>
           <NextUIWithRouterProvider>
             <ToastContainer>
