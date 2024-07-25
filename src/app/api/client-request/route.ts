@@ -1,5 +1,5 @@
 import { RECAPTCHA_SECRET_KEY, RECAPTCHA_SERVER_VERIFY_URL } from '@/lib/config';
-import { sendEmailNotification } from '@/lib/email';
+import { sendEmailNotification } from '@/lib/email/email';
 import { backendService } from '@/services/backend';
 import { NextResponse } from 'next/server';
 
