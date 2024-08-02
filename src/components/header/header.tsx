@@ -1,22 +1,22 @@
 import React from 'react';
 import LanguageSwitcher from '../language-switcher/language-switcher';
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from '@nextui-org/navbar';
-import Logo from '@/assets/logo/logo-no-bg.png';
+import Logo from '@/assets/logo/logo.webp';
 import { H3 } from '@/theme/typography';
-import { Image } from '@nextui-org/image';
 import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
 import { Button } from '@nextui-org/button';
 import { useTranslationServer } from '@/i18n';
 import { Link } from '@nextui-org/link';
 import { routes } from '@/lib/routes';
 import OptionsDrawer from '../drawner/drawner';
+import Image from 'next/image';
 
 const Header = async () => {
   const { t } = await useTranslationServer('general');
   return (
     <Navbar maxWidth='full' className=''>
       <NavbarBrand className='gap-2'>
-        <Image src={Logo.src} alt='Logo' width={64} height={64} />
+        <Image src={Logo} alt='Logo' quality={100} className='w-12 md:w-14' />
         <H3>Three Lizards</H3>
       </NavbarBrand>
       <NavbarContent justify='end' className='hidden sm:flex'>

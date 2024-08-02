@@ -1,5 +1,5 @@
 export const phoneContact = '+1 (813) 390-9392';
-export const ubication = 'Tampa, FL';
+export const location = 'Tampa, FL';
 export const email = 'threelizards.co@gmail.com';
 export const emailConfig = { subject: 'Three Lizards Notification' };
 export const socialLinks = {

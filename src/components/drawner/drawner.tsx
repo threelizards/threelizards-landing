@@ -4,7 +4,7 @@ import { Button, Divider } from '@nextui-org/react';
 import clsx from 'clsx';
 import React, { useEffect } from 'react';
 import { HiBars3 } from 'react-icons/hi2';
-import Logo from '@/assets/logo/logo-no-bg.png';
+import Logo from '@/assets/logo/logo.webp';
 import LanguageSwitcher from '../language-switcher/language-switcher';
 import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
 import { Caption1, H3 } from '@/theme/typography';
@@ -43,7 +43,7 @@ const OptionsDrawer = () => {
         })}>
         <div className={clsx('flex flex-col h-full', { hidden: !isOpen })}>
           <div className='flex gap-2 items-center p-4'>
-            <Image src={Logo.src} alt='Logo' width={64} height={64} />
+            <Image src={Logo.src} alt='Logo' width={48} height={48} />
             <H3>Three Lizards</H3>
           </div>
           <Divider className='mb-4' />

@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const PresentationPhoto = () => {
   const { theme } = useTheme();
-  return <Image src={theme === 'dark' ? girlPhotoDark : girlPhoto} alt='Worker girl' />;
+  return <Image src={theme === 'dark' ? girlPhotoDark : girlPhoto} alt='Worker girl' quality={100} />;
 };
 
 export default PresentationPhoto;
