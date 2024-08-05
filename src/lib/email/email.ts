@@ -1,7 +1,7 @@
 import { email, emailConfig, gmailPass, gmailPort, gmailSMTP } from '../config';
 import nodemailer from 'nodemailer';
 import { IClientRequestCreate } from '@/types/client-request';
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { emailNotificationTemplate } from './emailNotificationTemplate';
 
 const transporter = nodemailer.createTransport({
@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendEmailNotification = async (data: IClientRequestCreate) => {
-  const { t } = await useTranslationServer('email-notification');
+  const { t } = await translationServer('email-notification');
   try {
     let info = '';
     if (data.email && data.phone) {

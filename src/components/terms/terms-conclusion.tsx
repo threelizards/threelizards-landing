@@ -1,4 +1,4 @@
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { H4, P, Subtitle2 } from '@/theme/typography';
 import React from 'react';
 import { routes } from '@/lib/routes';
@@ -6,7 +6,7 @@ import { email, phoneContact } from '@/lib/config';
 import { Link } from '@nextui-org/link';
 
 const TermsConclusion = async () => {
-  const { t } = await useTranslationServer('terms-conclusion');
+  const { t } = await translationServer('terms-conclusion');
   return (
     <div>
       <div className='mb-10'>

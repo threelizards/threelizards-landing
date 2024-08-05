@@ -46,7 +46,7 @@ const BackOfficeClientRequestsTable: React.FC<BackOfficeClientRequestsTableProps
           return cellValue as string | null;
       }
     },
-    [deleting]
+    [deleting, deleteRequest, t]
   );
 
   return (

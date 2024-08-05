@@ -44,7 +44,7 @@ const ContactUsFormContainer: React.FC<ContactUsFormProps> = ({ initialCountry }
   useEffect(() => {
     if (phone) trigger('email');
     if (email) trigger('phone');
-  }, [phone, email]);
+  }, [phone, email, trigger]);
 
   const onClose = () => {
     router.push(routes.root);

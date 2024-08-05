@@ -5,14 +5,14 @@ import Logo from '@/assets/logo/logo.webp';
 import { H3 } from '@/theme/typography';
 import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
 import { Button } from '@nextui-org/button';
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { Link } from '@nextui-org/link';
 import { routes } from '@/lib/routes';
 import OptionsDrawer from '../drawner/drawner';
 import Image from 'next/image';
 
 const Header = async () => {
-  const { t } = await useTranslationServer('general');
+  const { t } = await translationServer('general');
   return (
     <Navbar maxWidth='full' className=''>
       <NavbarBrand className='gap-2'>

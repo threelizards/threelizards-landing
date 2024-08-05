@@ -1,9 +1,9 @@
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { P, H4 } from '@/theme/typography';
 import React from 'react';
 
 const TermsDevelopment = async () => {
-  const { t } = await useTranslationServer('terms-development');
+  const { t } = await translationServer('terms-development');
   return (
     <div>
       <div className='mb-10'>

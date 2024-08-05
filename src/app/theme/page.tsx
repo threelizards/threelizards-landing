@@ -1,5 +1,5 @@
 import Palette from '@/components/palette/palette';
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { palette } from '@/theme/palette';
 import {
   Caption,
@@ -19,7 +19,7 @@ import {
 import React from 'react';
 
 const ThemePage = async () => {
-  const { t } = await useTranslationServer('page-theme');
+  const { t } = await translationServer('page-theme');
   return (
     <div className='flex flex-col items-center w-full p-8 gap-8'>
       <H1 className='mb-8'>{t('title')}</H1>

@@ -1,4 +1,4 @@
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { H2, H4, H5, Subtitle } from '@/theme/typography';
 import React from 'react';
 import Story from './story';
@@ -16,7 +16,7 @@ const stories = [
 ];
 
 const CustomerStoriesSection = async () => {
-  const { t } = await useTranslationServer('customer-stories-sections');
+  const { t } = await translationServer('customer-stories-sections');
   return (
     <div className='flex flex-col gap-12 items-center px-8 my-10 w-full max-w-7xl'>
       <div className='flex flex-col gap-2 text-center '>

@@ -1,4 +1,4 @@
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { H3, Subtitle } from '@/theme/typography';
 import { Button } from '@nextui-org/button';
 import React from 'react';
@@ -7,7 +7,7 @@ import { routes } from '@/lib/routes';
 import { Link } from '@nextui-org/link';
 
 const ContactSection = async () => {
-  const { t } = await useTranslationServer('contact-section');
+  const { t } = await translationServer('contact-section');
 
   return (
     <section

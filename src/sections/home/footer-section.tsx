@@ -1,12 +1,12 @@
 import Social from '@/components/social/social';
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { routes } from '@/lib/routes';
 import { H5 } from '@/theme/typography';
 import { Link } from '@nextui-org/link';
 import React from 'react';
 
 const FooterSection = async () => {
-  const { t } = await useTranslationServer('footer-section');
+  const { t } = await translationServer('footer-section');
   return (
     <footer className='w-full p-4 max-w-7xl '>
       <div className='justify-center lg:items-center lg:flex lg:justify-between'>

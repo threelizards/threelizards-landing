@@ -1,9 +1,9 @@
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { H4, P, H3, H2 } from '@/theme/typography';
 import React from 'react';
 
 const TermsIntroduction = async () => {
-  const { t } = await useTranslationServer('terms-introduction');
+  const { t } = await translationServer('terms-introduction');
   return (
     <div>
       <H2 className='text-primary-500 mb-5'>{t('title')}</H2>

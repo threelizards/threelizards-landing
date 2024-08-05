@@ -1,13 +1,13 @@
 import React from 'react';
 import { H1, Subtitle } from '@/theme/typography';
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { Button } from '@nextui-org/button';
 import PresentationPhoto from './presentation-photo';
 import { routes } from '@/lib/routes';
 import { Link } from '@nextui-org/link';
 
 const PresentationSection = async () => {
-  const { t } = await useTranslationServer('presentation-section');
+  const { t } = await translationServer('presentation-section');
   return (
     <section className='flex flex-col lg:flex-row gap-6 lg:gap-24 max-w-7xl items-center px-8 my-10'>
       <div className='flex flex-col w-full gap-6 text-center lg:text-start items-center lg:items-start'>

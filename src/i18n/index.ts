@@ -23,7 +23,7 @@ export const getCurrentLanguage = () => {
   return language as LanguageOptions;
 };
 
-export async function useTranslationServer(ns?: string, options: { keyPrefix?: string } = {}) {
+export async function translationServer(ns?: string, options: { keyPrefix?: string } = {}) {
   const lng = getCurrentLanguage();
   const i18nextInstance = await initI18next(lng, ns);
   return {

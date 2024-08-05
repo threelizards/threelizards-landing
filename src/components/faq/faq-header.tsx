@@ -3,10 +3,10 @@ import { Button } from '@nextui-org/button';
 import React from 'react';
 import { Link } from '@nextui-org/link';
 import { routes } from '@/lib/routes';
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 
 const FAQHeader: React.FC = async () => {
-  const { t } = await useTranslationServer('faq-section');
+  const { t } = await translationServer('faq-section');
   return (
     <div className='flex flex-col gap-y-4'>
       <H2 className='text-xl font-semibold text-center lg:text-start'>{t('title')}</H2>

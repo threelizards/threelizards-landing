@@ -2,7 +2,7 @@ import React from 'react';
 import { H3 } from '@/theme/typography';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import ContactUsFormContainer from '@/sections/contact-us/contact-us-form-container';
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { IP_API, fallbackCountry } from '@/lib/config';
 import { GeoData } from '@/types/utils';
 import { getClientIp } from '@/lib/utils';
@@ -21,7 +21,7 @@ async function fetchCountryCode() {
 }
 
 const ContactUsPage = async () => {
-  const { t } = await useTranslationServer('contact-us');
+  const { t } = await translationServer('contact-us');
   const initialCountry = await fetchCountryCode();
   return (
     <div className='flex justify-center p-8'>

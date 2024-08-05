@@ -1,13 +1,13 @@
 import { H2, H5 } from '@/theme/typography';
 import React from 'react';
 import Service from './service';
-import { useTranslationServer } from '@/i18n';
+import { translationServer } from '@/i18n';
 import { WebIcon } from '@/assets/icons/components/web-icon';
 import { HiOutlineChartPie, HiOutlineCpuChip, HiOutlineEye, HiArrowsPointingOut } from 'react-icons/hi2';
 import { EditIcon } from '@/assets/icons/components/edit-icon';
 
 const OurServicesSection = async () => {
-  const { t } = await useTranslationServer('our-services-section');
+  const { t } = await translationServer('our-services-section');
   return (
     <section className='flex flex-col gap-12 items-center px-8 my-10 max-w-7xl'>
       <div className='flex flex-col gap-2 text-center max-w-2xl'>
