@@ -23,7 +23,7 @@ export const contactUSchema = z
     if (email) {
       try {
         z.string().email().parse(email);
-      } catch (error) {
+      } catch {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message: 'form.email_invalid',

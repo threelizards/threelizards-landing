@@ -25,7 +25,6 @@ const BackOfficeClientRequestsTable: React.FC<BackOfficeClientRequestsTableProps
       switch (columnKey) {
         case 'creation_date':
           return dayjs(request.creation_date).format('YYYY-MM-DD HH:mm:ss');
-
         case 'actions':
           return (
             <div className='flex items-center gap-2 justify-center'>

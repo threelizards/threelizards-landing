@@ -49,7 +49,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({ initialCountry, onChange, ...pr
 
   const orderedCountries = useMemo(
     () =>
-      supportedCountries.sort(([_, prev], [__, current]) => {
+      supportedCountries.sort(([, prev], [, current]) => {
         if (prev < current) return -1;
         else if (prev > current) return 1;
         return 0;

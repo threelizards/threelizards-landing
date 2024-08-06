@@ -1,6 +1,5 @@
 import OurServicesSection from '@/sections/home/our-services-section';
 import PresentationSection from '@/sections/home/presentation-section';
-import Section2 from '@/sections/home/section-2';
 import InformationSection from '@/sections/home/information-section';
 import FooterSection from '@/sections/home/footer-section';
 import CustomerStoriesSection from '@/sections/home/customer-stories-section';

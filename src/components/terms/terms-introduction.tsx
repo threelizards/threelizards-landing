@@ -1,5 +1,5 @@
 import { translationServer } from '@/i18n';
-import { H4, P, H3, H2 } from '@/theme/typography';
+import { H4, P, H2 } from '@/theme/typography';
 import React from 'react';
 
 const TermsIntroduction = async () => {

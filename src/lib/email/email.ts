@@ -39,7 +39,7 @@ export const sendEmailNotification = async (data: IClientRequestCreate) => {
     };
 
     await transporter.sendMail(mensaje);
-  } catch (error) {
+  } catch {
     throw new Error('Invalid notification mail');
   }
 };

@@ -16,7 +16,7 @@ export const useDeleteClientRequest = () => {
         const res = await frontendService.clientRequest.deleteClientRequest(id);
         router.refresh();
         return res;
-      } catch (e) {
+      } catch {
         toast(t('delete_error'), { type: 'error' });
       }
       setDeleting((prev) => prev.filter((loadingId) => id !== loadingId));

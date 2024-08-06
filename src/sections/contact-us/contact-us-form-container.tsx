@@ -34,7 +34,7 @@ const ContactUsFormContainer: React.FC<ContactUsFormProps> = ({ initialCountry }
       } else {
         toast(t('error.captcha'), { type: 'error' });
       }
-    } catch (error) {
+    } catch {
       toast(t('error.unknown'), { type: 'error' });
     }
   });
