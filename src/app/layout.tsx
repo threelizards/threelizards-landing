@@ -19,8 +19,43 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Three Lizards',
-  description: 'Your definitive web solution'
+  title: 'Three Lizards - Web Development Company',
+  description: 'Your definitive web solution',
+  keywords: [
+    'web',
+    'development',
+    'desarrollo',
+    'design',
+    'diseño',
+    'company',
+    'compañía',
+    'solutions',
+    'soluciones',
+    'website',
+    'sitio web',
+    'seo',
+    'ecommerce',
+    'E-commerce',
+    'comercio electrónico',
+    'three',
+    'tres',
+    'lizard',
+    'lagartija',
+    'lizards',
+    'lagartijas',
+    'threelizards',
+    'three lizards',
+    'tres lagartijas',
+    'software development',
+    'software',
+    'fast',
+    'rápido',
+    'fastest',
+    'clean',
+    'limpio',
+    'code',
+    'código'
+  ]
 };
 
 export default function RootLayout({
