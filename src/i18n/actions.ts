@@ -6,7 +6,7 @@ import { getNextYear } from './utils';
 import { LanguageOptions } from './types';
 
 export async function updateCookieLanguage(lng: LanguageOptions) {
-  if (languages.includes(lng)) {
+  if (languages.includes(lng) && cookies().get(cookieI18Name)?.value != lng) {
     cookies().set(cookieI18Name, lng, { expires: getNextYear() });
   }
 }
