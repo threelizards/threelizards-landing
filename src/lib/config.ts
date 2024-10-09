@@ -18,3 +18,4 @@ export const GOOGLE_TGM_ID = process.env.NEXT_PUBLIC_GOOGLE_TGM_ID || '';
 export const gmailPass = process.env.GMAIL_PASS || '';
 export const gmailSMTP = process.env.GMAIL_SMTP || '';
 export const gmailPort = Number(process.env.GMAIL_PORT) || 587;
+export const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL || '';
