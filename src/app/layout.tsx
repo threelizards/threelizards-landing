@@ -7,7 +7,7 @@ import { languages } from '@/i18n/settings';
 import NextUIWithRouterProvider from '@/nextui/nextui-with-router-provider';
 
 import './globals.css';
-import { getCurrentLanguage } from '@/i18n';
+import { getCurrentLanguage, translationServer } from '@/i18n';
 import ToastContainer from '@/components/toast/toast-container';
 import GoogleTagManagerHead from '@/components/google/google-tag-manager-head';
 import GoogleTagManagerBody from '@/components/google/google-tag-manager-body';
@@ -18,45 +18,35 @@ const poppins = Poppins({
   subsets: ['latin']
 });
 
-export const metadata: Metadata = {
-  title: 'Three Lizards - Web Development Company',
-  description: 'Your definitive web solution',
-  keywords: [
-    'web',
-    'development',
-    'desarrollo',
-    'design',
-    'diseño',
-    'company',
-    'compañía',
-    'solutions',
-    'soluciones',
-    'website',
-    'sitio web',
-    'seo',
-    'ecommerce',
-    'E-commerce',
-    'comercio electrónico',
-    'three',
-    'tres',
-    'lizard',
-    'lagartija',
-    'lizards',
-    'lagartijas',
-    'threelizards',
-    'three lizards',
-    'tres lagartijas',
-    'software development',
-    'software',
-    'fast',
-    'rápido',
-    'fastest',
-    'clean',
-    'limpio',
-    'code',
-    'código'
-  ]
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await translationServer('metadata');
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: [
+      t('keywords.web'),
+      t('keywords.development'),
+      t('keywords.design'),
+      t('keywords.company'),
+      t('keywords.solutions'),
+      t('keywords.website'),
+      t('keywords.seo'),
+      t('keywords.ecommerce'),
+      t('keywords.E-commerce'),
+      t('keywords.three'),
+      t('keywords.lizard'),
+      t('keywords.lizards'),
+      t('keywords.threelizards'),
+      t('keywords.three_lizards'),
+      t('keywords.software_development'),
+      t('keywords.software'),
+      t('keywords.fast'),
+      t('keywords.fastest'),
+      t('keywords.clean'),
+      t('keywords.code')
+    ]
+  };
+}
 
 export default function RootLayout({
   children
