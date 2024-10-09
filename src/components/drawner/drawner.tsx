@@ -64,7 +64,7 @@ const OptionsDrawer = () => {
           </div>
         </div>
       </div>
-      <Button isIconOnly variant='light' onClick={toggleDrawer}>
+      <Button isIconOnly variant='light' onClick={toggleDrawer} aria-label='Menu'>
         <HiBars3 size={32} />
       </Button>
     </>
