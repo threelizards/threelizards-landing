@@ -1,0 +1,13 @@
+{
+  "title": "Login",
+  "sign_in": "Sing in",
+  "form": {
+    "username": "Username",
+    "password": "Password",
+    "username_required": "Username is required",
+    "password_required": "Password is required"
+  },
+  "error": {
+    "invalid_credentials": "Invalid credentials"
+  }
+}

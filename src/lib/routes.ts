@@ -3,5 +3,6 @@ export const routes = {
   contact_us: '/contact-us',
   backoffice: '/backoffice',
   terms: '/terms',
-  policy: '/policy'
+  policy: '/policy',
+  login: '/login'
 };

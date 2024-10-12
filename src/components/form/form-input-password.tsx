@@ -1,15 +1,21 @@
 import { useTranslationClient } from '@/i18n/client';
-import { Input, InputProps } from '@nextui-org/input';
 import { Controller, useFormContext } from 'react-hook-form';
+import InputPassword, { InputPasswordProps } from '../inputs/input-password';
 
 // ----------------------------------------------------------------------
 
-interface FormInputProps extends InputProps {
+interface FormInputPasswordProps extends InputPasswordProps {
   name: string;
   translateFile?: string;
 }
 
-export default function FormInput({ name, label, isRequired, translateFile, ...props }: FormInputProps) {
+export default function FormInputPassword({
+  name,
+  label,
+  isRequired,
+  translateFile,
+  ...props
+}: FormInputPasswordProps) {
   const formContext = useFormContext();
   const { control } = formContext;
   const { t } = useTranslationClient(translateFile);
@@ -18,7 +24,7 @@ export default function FormInput({ name, label, isRequired, translateFile, ...p
       name={name}
       control={control}
       render={({ field, fieldState: { error } }) => (
-        <Input
+        <InputPassword
           label={
             <>
               <span>{typeof label === 'string' ? t(label) : label}</span>

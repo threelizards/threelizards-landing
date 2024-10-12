@@ -19,3 +19,5 @@ export const gmailPass = process.env.GMAIL_PASS || '';
 export const gmailSMTP = process.env.GMAIL_SMTP || '';
 export const gmailPort = Number(process.env.GMAIL_PORT) || 587;
 export const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL || '';
+export const ADMIN_USER = process.env.ADMIN_USER || '';
+export const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '';

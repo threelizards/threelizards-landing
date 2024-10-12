@@ -1,0 +1,13 @@
+{
+  "title": "Iniciar sesión",
+  "sign_in": "Autenticarse",
+  "form": {
+    "username": "Nombre de usuario",
+    "password": "Contraseña",
+    "username_required": "Nombre de usuario requerido",
+    "password_required": "Contraseña requerida"
+  },
+  "error": {
+    "invalid_credentials": "Credenciales inválidas"
+  }
+}

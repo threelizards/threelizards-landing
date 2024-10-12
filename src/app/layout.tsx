@@ -12,6 +12,7 @@ import ToastContainer from '@/components/toast/toast-container';
 import GoogleTagManagerHead from '@/components/google/google-tag-manager-head';
 import GoogleTagManagerBody from '@/components/google/google-tag-manager-body';
 import { GOOGLE_TGM_ID } from '@/lib/config';
+import { AuthProvider } from '@/auth/context';
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -62,13 +63,15 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.className} min-h-screen !overflow-x-hidden`}>
         <GoogleTagManagerBody gtmId={GOOGLE_TGM_ID} />
-        <I18NProvider {...{ lng }}>
-          <NextUIWithRouterProvider>
-            <ToastContainer>
-              <AppLayout>{children}</AppLayout>
-            </ToastContainer>
-          </NextUIWithRouterProvider>
-        </I18NProvider>
+        <AuthProvider>
+          <I18NProvider {...{ lng }}>
+            <NextUIWithRouterProvider>
+              <ToastContainer>
+                <AppLayout>{children}</AppLayout>
+              </ToastContainer>
+            </NextUIWithRouterProvider>
+          </I18NProvider>
+        </AuthProvider>
       </body>
     </html>
   );
