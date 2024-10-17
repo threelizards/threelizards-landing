@@ -13,6 +13,7 @@ import GoogleTagManagerHead from '@/components/google/google-tag-manager-head';
 import GoogleTagManagerBody from '@/components/google/google-tag-manager-body';
 import { GOOGLE_TGM_ID } from '@/lib/config';
 import { AuthProvider } from '@/auth/context';
+import TopLoader from '@/components/top-loader/top-loader';
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -67,6 +68,7 @@ export default function RootLayout({
           <I18NProvider {...{ lng }}>
             <NextUIWithRouterProvider>
               <ToastContainer>
+                <TopLoader />
                 <AppLayout>{children}</AppLayout>
               </ToastContainer>
             </NextUIWithRouterProvider>
