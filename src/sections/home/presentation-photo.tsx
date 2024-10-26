@@ -3,11 +3,11 @@
 import React from 'react';
 import girlPhoto from '@/assets/images/sexy-girl.webp';
 import girlPhotoDark from '@/assets/images/sexy-girl-dark.webp';
-import { useTheme } from 'next-themes';
 import Image from 'next/image';
+import { useThemeContext } from '@/theme/context/theme-context';
 
-const PresentationPhoto = () => {
-  const { theme } = useTheme();
+const PresentationPhoto: React.FC = () => {
+  const { theme } = useThemeContext();
   return <Image src={theme === 'dark' ? girlPhotoDark : girlPhoto} alt='Worker girl' quality={100} />;
 };
 

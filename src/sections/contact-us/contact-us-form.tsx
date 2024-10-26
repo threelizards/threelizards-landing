@@ -8,9 +8,9 @@ import { IClientRequestCreate } from '@/types/client-request';
 import FormPhoneInput from '@/components/form/form-phone-input';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { RECAPTCHA_SITE_KEY } from '@/lib/config';
-import { useTheme } from 'next-themes';
 import { useI18NContext } from '@/i18n/context';
 import { CountryCode } from 'libphonenumber-js';
+import { useThemeContext } from '@/theme/context/theme-context';
 
 interface ContactUsFormProps {
   initialCountry: CountryCode;
@@ -21,7 +21,7 @@ const ContactUsForm: React.FC<ContactUsFormProps> = ({ setCaptcha, initialCountr
   const { t } = useTranslationClient('contact-us');
   const { watch } = useFormContext<IClientRequestCreate>();
   const [email, phone] = watch(['email', 'phone']);
-  const { theme } = useTheme();
+  const { theme } = useThemeContext();
   const { language } = useI18NContext();
 
   return (

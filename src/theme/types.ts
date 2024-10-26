@@ -22,3 +22,8 @@ export interface IColorPaletteSet {
 
 export type HeadingProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> &
   LayoutBaseProps;
+
+export interface ThemeProviderProps {
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
+}

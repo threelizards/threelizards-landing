@@ -14,6 +14,8 @@ import GoogleTagManagerBody from '@/components/google/google-tag-manager-body';
 import { GOOGLE_TGM_ID } from '@/lib/config';
 import { AuthProvider } from '@/auth/context';
 import TopLoader from '@/components/top-loader/top-loader';
+import CustomThemeProvider from '@/theme/context/theme-provider';
+import { getThemeServer } from '@/theme/server';
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -57,6 +59,7 @@ export default function RootLayout({
 }>) {
   acceptLanguage.languages(languages);
   const lng = getCurrentLanguage();
+  const theme = getThemeServer();
   return (
     <html lang={lng} suppressHydrationWarning>
       <head>
@@ -66,12 +69,14 @@ export default function RootLayout({
         <GoogleTagManagerBody gtmId={GOOGLE_TGM_ID} />
         <AuthProvider>
           <I18NProvider {...{ lng }}>
-            <NextUIWithRouterProvider>
-              <ToastContainer>
-                <TopLoader />
-                <AppLayout>{children}</AppLayout>
-              </ToastContainer>
-            </NextUIWithRouterProvider>
+            <CustomThemeProvider initialTheme={theme}>
+              <NextUIWithRouterProvider>
+                <ToastContainer>
+                  <TopLoader />
+                  <AppLayout>{children}</AppLayout>
+                </ToastContainer>
+              </NextUIWithRouterProvider>
+            </CustomThemeProvider>
           </I18NProvider>
         </AuthProvider>
       </body>

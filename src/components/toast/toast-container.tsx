@@ -1,13 +1,13 @@
 'use client';
 
+import { useThemeContext } from '@/theme/context/theme-context';
 import { LayoutBaseProps } from '@/types/utils';
-import { useTheme } from 'next-themes';
 import React from 'react';
 import { ToastContainer as RootToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ToastContainer: React.FC<LayoutBaseProps> = ({ children }) => {
-  const { theme } = useTheme();
+  const { theme } = useThemeContext();
   return (
     <>
       {children}
