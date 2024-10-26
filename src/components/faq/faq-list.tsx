@@ -1,34 +1,23 @@
-'use client';
-
 import React from 'react';
-import { Accordion, AccordionItem } from '@nextui-org/accordion';
-import { Subtitle, Subtitle1 } from '@/theme/typography';
-import { useTranslationClient } from '@/i18n/client';
+import { translationServer } from '@/i18n';
+import { IAccordionItem } from '../accordion/types';
+import AccordionClient from '../accordion/accordion-client';
 
-const FAQList: React.FC = () => {
-  const { t } = useTranslationClient('faq-section');
+const FAQList: React.FC = async () => {
+  const { t } = await translationServer('faq-section');
+
+  const items: IAccordionItem[] = [
+    { title: t('offer'), text: t('offer_answer') },
+    { title: t('custom_solutions'), text: t('custom_solutions_answer') },
+    { title: t('how_long'), text: t('how_long_answer') },
+    { title: t('update_existing_website'), text: t('update_existing_website_answer') },
+    { title: t('support'), text: t('support_answer') },
+    { title: t('how_much'), text: t('how_much_answer') }
+  ];
+
   return (
     <div className='max-w-2xl lg:w-2/3'>
-      <Accordion className='!px-6 w-full border border-slate-200 rounded-md'>
-        <AccordionItem className='text-start' title={<Subtitle>{t('offer')}</Subtitle>}>
-          <Subtitle1 className='opacity-60'>{t('offer_answer')}</Subtitle1>
-        </AccordionItem>
-        <AccordionItem className='text-start' title={<Subtitle>{t('custom_solutions')}</Subtitle>}>
-          <Subtitle1 className='opacity-60'>{t('custom_solutions_answer')}</Subtitle1>
-        </AccordionItem>
-        <AccordionItem className='text-start' title={<Subtitle>{t('how_long')}</Subtitle>}>
-          <Subtitle1 className='opacity-60'>{t('how_long_answer')}</Subtitle1>
-        </AccordionItem>
-        <AccordionItem className='text-start' title={<Subtitle>{t('update_existing_website')}</Subtitle>}>
-          <Subtitle1 className='opacity-60'>{t('update_existing_website_answer')}</Subtitle1>
-        </AccordionItem>
-        <AccordionItem className='text-start' title={<Subtitle>{t('support')}</Subtitle>}>
-          <Subtitle1 className='opacity-60'>{t('support_answer')}</Subtitle1>
-        </AccordionItem>
-        <AccordionItem className='text-start' title={<Subtitle>{t('how_much')}</Subtitle>}>
-          <Subtitle1 className='opacity-60'>{t('how_much_answer')}</Subtitle1>
-        </AccordionItem>
-      </Accordion>
+      <AccordionClient items={items} />
     </div>
   );
 };

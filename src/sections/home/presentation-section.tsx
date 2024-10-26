@@ -15,7 +15,13 @@ const PresentationSection = async () => {
           {t('title')} <span className='text-primary'>{t('title2')}</span>
         </H1>
         <Subtitle>{t('subtitle')}</Subtitle>
-        <Button color='primary' variant='solid' className='max-w-40' size='lg' as={Link} href={routes.contact_us}>
+        <Button
+          color='primary'
+          variant='solid'
+          className='max-w-40 !text-white'
+          size='lg'
+          as={Link}
+          href={routes.contact_us}>
           {t('contact')}
         </Button>
       </div>

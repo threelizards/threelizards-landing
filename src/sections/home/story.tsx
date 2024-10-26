@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import RateIcon from '@/assets/icons/images/rate.webp';
 import { Caption1, Title } from '@/theme/typography';
 import { Card, CardHeader, CardBody, CardFooter } from '@nextui-org/card';
 import { Divider } from '@nextui-org/divider';
-import { Image } from '@nextui-org/image';
 import { StaticImageData } from 'next/image';
 import React from 'react';
+import Image from 'next/image';
 
 interface StoryProps {
   rate: number;
@@ -24,13 +25,13 @@ const Story: React.FC<StoryProps> = ({ rate, name, story, avatar }) => {
       }}
       shadow='sm'>
       <CardHeader>
-        <Image src={RateIcon.src} alt='rate' width={32} height={32} radius='none' />
+        <Image src={RateIcon} alt='rate' width={32} height={32} />
         <Title>{rate.toFixed(1)}</Title>
       </CardHeader>
       <Divider />
       <CardBody>{story}</CardBody>
       <CardFooter>
-        <Image src={avatar.src} width={32} height={32} alt='avatar' radius='none' />
+        <img src={avatar.src} width={32} height={32} alt='avatar' />
         <Caption1>{name}</Caption1>
       </CardFooter>
     </Card>
