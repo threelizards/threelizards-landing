@@ -4,6 +4,7 @@ import { Button, Divider } from '@nextui-org/react';
 import clsx from 'clsx';
 import React, { useEffect } from 'react';
 import { HiBars3 } from 'react-icons/hi2';
+import { IoIosArrowForward } from 'react-icons/io';
 import Logo from '@/assets/logo/logo.webp';
 import LanguageSwitcher from '../language-switcher/language-switcher';
 import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
@@ -42,9 +43,14 @@ const OptionsDrawer = () => {
           'w-80': isOpen
         })}>
         <div className={clsx('flex flex-col h-full', { hidden: !isOpen })}>
-          <div className='flex gap-2 items-center p-4'>
-            <Image src={Logo.src} alt='Logo' width={48} height={48} />
-            <H3>Three Lizards</H3>
+          <div className='flex items-center justify-between p-4'>
+            <div className='flex gap-2 items-center'>
+              <Image src={Logo.src} alt='Logo' width={48} height={48} />
+              <H3>Three Lizards</H3>
+            </div>
+            <Button isIconOnly variant='light' onClick={toggleDrawer}>
+              <IoIosArrowForward size={24} />
+            </Button>
           </div>
           <Divider className='mb-4' />
           <div className='flex flex-col flex-1 justify-between gap-4 px-6 py-4'>
