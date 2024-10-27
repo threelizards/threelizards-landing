@@ -13,10 +13,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { routes } from '@/lib/routes';
 import { useTranslationClient } from '@/i18n/client';
+import { usePathname } from 'next/navigation';
 
 const OptionsDrawer = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const { t } = useTranslationClient();
+  const pathname = usePathname();
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
@@ -31,6 +33,10 @@ const OptionsDrawer = () => {
       }
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <>
