@@ -15,8 +15,11 @@ export function middleware(req: NextRequest) {
   const paramLng = searchParams.get(i18nSearchParamName);
   // const paramTheme = searchParams.get(paramThemeName);
 
-  const lng = paramLng || acceptLanguage.get(req.cookies.get(cookieI18Name)?.value) || fallbackLng;
-  const theme = req.cookies.get(cookieThemeName)?.value || fallbackTheme;
+  const lngCookieValue = req.cookies.get(cookieI18Name)?.value;
+  const themeCookieValue = req.cookies.get(cookieThemeName)?.value;
+
+  const lng = paramLng || acceptLanguage.get(lngCookieValue) || fallbackLng;
+  const theme = themeCookieValue || fallbackTheme;
 
   const requestHeaders = new Headers(req.headers);
   requestHeaders.set('x-url', req.url);
@@ -26,11 +29,15 @@ export function middleware(req: NextRequest) {
     }
   });
 
-  response.cookies.set(cookieI18Name, lng, {
-    expires: getNextYear()
-  });
-  response.cookies.set(cookieThemeName, theme, {
-    expires: getNextYear()
-  });
+  if (lngCookieValue !== lng) {
+    response.cookies.set(cookieI18Name, lng, {
+      expires: getNextYear()
+    });
+  }
+  if (themeCookieValue !== theme) {
+    response.cookies.set(cookieThemeName, theme, {
+      expires: getNextYear()
+    });
+  }
   return response;
 }
